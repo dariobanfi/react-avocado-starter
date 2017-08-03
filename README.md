@@ -1,10 +1,12 @@
-# React Avocado Started
+# React Avocado Starter
 
 Simple yet full of energy, like an Avocado! 🥑
 
 ## About
 
 This is a react boilerplate which aims to be as simple as possible, while providing many useful features as SSR and fast developmenet iteration. 
+
+This project is derived from react-universally.
 
 ## Features
 

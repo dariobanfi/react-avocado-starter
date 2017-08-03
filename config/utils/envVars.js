@@ -3,7 +3,7 @@
 */
 
 import appRootDir from 'app-root-dir';
-impport colors from 'colors/safe';
+import colors from 'colors/safe';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
