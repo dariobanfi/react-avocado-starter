@@ -1,0 +1,17 @@
+.env
+build/
+logs
+*.log
+pids
+*.pid
+*.seed
+coverage
+.lock-wscript
+node_modules
+npm-debug.log
+.idea
+.history
+flow-typed/
+flow-coverage/
+.happypack
+.DS_Store
