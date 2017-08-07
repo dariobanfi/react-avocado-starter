@@ -14,20 +14,21 @@ This project is derived from react-universally.
   - 🔀 `react-router` v4 as the router.
   - 🌍 Server Side Rendering.
   - 🚄 `express` server.
-  - 🎭 `jest` as the test framework.
   - 💅 Styled Components for CSS.
+  - 🎭 `jest` as the test framework.
   - 💄 Airbnb's ESlint configuration + Stylelint for Styled Components.
   - 😎 Progressive Web Application ready, with offline support, via a Service Worker.
   - 🐘 Long term browser caching of assets with automated cache invalidation.
   - 📦 All source is bundled using Webpack v2.
-  - 🚀 Full ES2017+ support - use the exact same JS syntax across the entire project. No more folder context switching! We also only use syntax that is stage-3 or later in the TC39 process.
+  - 🚀 Full ES2017+ support - use the exact same JS syntax across the entire project, both server and client code
   - 🔧 Centralised application configuration with helpers to avoid boilerplate in your code. Also has support for environment specific configuration files.
-  - 🔥 Extreme live development - hot reloading of ALL changes to client/server source, with auto development server restarts when your application configuration changes.  All this with a high level of error tolerance and verbose logging to the console.
+  - 🔥 Extreme live development - hot reloading of ALL changes to client/server source
   - ⛑ SEO friendly - `react-helmet` provides control of the page title/meta/styles/scripts from within your components.
   - 🤖 Optimised Webpack builds via HappyPack and an auto generated Vendor DLL for smooth development experiences.
   - 👮 Security on the `express` server using `helmet` and `hpp`.
   - 🏜 Asset bundling support. e.g. images/fonts.
   - 🎛 Preconfigured to support development and optimised production builds.
+  - ✅ Fully compatible with MacOS, Linux and Windows
 
 
 ## Getting started
@@ -38,6 +39,11 @@ cd react-avocado-starter
 npm i
 npm run develop
 ```
+
+**WINDOWS Users**: The project binds the dev server to `0.0.0.0` but this doesn't work for Windows.
+To fix this, create a file called `.env.development.local` under the project root and add the following line:
+
+`HOST=127.0.0.1`
 
 ## Personal TODO
 
