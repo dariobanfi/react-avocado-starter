@@ -4,5 +4,5 @@ import appRootDir from 'app-root-dir';
 import config from '../../config';
 
 export default express.static(pathResolve(appRootDir.get(), config('bundles.client.outputPath')), {
-  maxAge: config('browserCacheMaxAge'),
+  maxAge: config('browserCacheMaxAge')
 });

@@ -6,16 +6,16 @@ const routes = [
   {
     path: '/',
     exact: true,
-    component: Home,
+    component: Home
   },
   {
     path: '/info',
-    component: Info,
+    component: Info
   },
   {
     path: '*',
-    component: NotFound,
-  },
+    component: NotFound
+  }
 ];
 
 export default routes;

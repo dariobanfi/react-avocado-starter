@@ -18,7 +18,7 @@ class HotNodeServer {
         log({
           title: name,
           level: 'info',
-          message: 'Restarting server...',
+          message: 'Restarting server...'
         });
       }
 
@@ -28,7 +28,7 @@ class HotNodeServer {
         title: name,
         level: 'info',
         message: 'Server running with latest changes.',
-        notify: false,
+        notify: false
       });
 
       newServer.stdout.on('data', data => console.log(data.toString().trim()));
@@ -36,7 +36,7 @@ class HotNodeServer {
         log({
           title: name,
           level: 'error',
-          message: 'Error in server execution, check the console for more info.',
+          message: 'Error in server execution, check the console for more info.'
         });
         console.error(data.toString().trim());
       });
@@ -73,7 +73,7 @@ class HotNodeServer {
       log({
         title: name,
         level: 'info',
-        message: 'Building new bundle...',
+        message: 'Building new bundle...'
       });
     });
 
@@ -90,7 +90,7 @@ class HotNodeServer {
             title: name,
             level: 'error',
             message: 'Build failed, check the console for more information.',
-            notify: true,
+            notify: true
           });
           console.log(stats.toString());
           return;
@@ -102,7 +102,7 @@ class HotNodeServer {
           title: name,
           level: 'error',
           message: 'Failed to start, please check the console for more information.',
-          notify: true,
+          notify: true
         });
         console.error(err);
       }

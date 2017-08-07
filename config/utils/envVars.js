@@ -23,7 +23,7 @@ function registerEnvFile() {
     path.resolve(appRootDir.get(), envFile),
     // Is there an environment config file at the app root for our target
     // environment name?
-    ifElse(DEPLOYMENT)(path.resolve(appRootDir.get(), `${envFile}.${DEPLOYMENT}`)),
+    ifElse(DEPLOYMENT)(path.resolve(appRootDir.get(), `${envFile}.${DEPLOYMENT}`))
   ]);
 
   const envFilePath = envFileResolutionOrder.find(filePath => fs.existsSync(filePath));

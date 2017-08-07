@@ -9,7 +9,7 @@ export function happyPackPlugin({ name, loaders }) {
     id: name,
     verbose: false,
     threads: 4,
-    loaders,
+    loaders
   });
 }
 
@@ -19,7 +19,7 @@ export function log(options) {
   if (options.notify) {
     notifier.notify({
       title,
-      message: options.message,
+      message: options.message
     });
   }
 

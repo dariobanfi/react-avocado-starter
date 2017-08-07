@@ -18,7 +18,7 @@ const errorHandlersMiddleware = [
       console.log(err.stack);
     }
     res.status(500).send('Sorry, an unexpected error occurred.');
-  },
+  }
 ];
 
 export default errorHandlersMiddleware;

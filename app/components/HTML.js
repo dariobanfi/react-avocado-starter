@@ -25,14 +25,14 @@ HTML.propTypes = {
   htmlAttributes: PropTypes.object,
   headerElements: PropTypes.node,
   bodyElements: PropTypes.node,
-  appBodyString: PropTypes.string,
+  appBodyString: PropTypes.string
 };
 
 HTML.defaultProps = {
   htmlAttributes: null,
   headerElements: null,
   bodyElements: null,
-  appBodyString: '',
+  appBodyString: ''
 };
 
 export default HTML;

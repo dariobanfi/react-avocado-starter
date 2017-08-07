@@ -36,14 +36,14 @@ class ListenerManager {
         log({
           title: this.name,
           level: 'info',
-          message: 'Destroyed all existing connections.',
+          message: 'Destroyed all existing connections.'
         });
 
         this.listener.close(() => {
           log({
             title: this.name,
             level: 'info',
-            message: 'Closed listener.',
+            message: 'Closed listener.'
           });
 
           resolve();

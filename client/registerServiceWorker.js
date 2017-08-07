@@ -12,7 +12,7 @@ if (process.env.BUILD_FLAG_IS_DEV === 'false') {
       onUpdating: () => undefined,
       onUpdateReady: () => OfflinePluginRuntime.applyUpdate(),
       onUpdated: () => window.location.reload(),
-      onUpdateFailed: () => undefined,
+      onUpdateFailed: () => undefined
     });
   }
 }

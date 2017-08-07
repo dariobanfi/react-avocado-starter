@@ -16,11 +16,11 @@ class NotFound extends Component {
 
 NotFound.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  staticContext: PropTypes.object,
+  staticContext: PropTypes.object
 };
 
 NotFound.defaultProps = {
-  staticContext: {},
+  staticContext: {}
 };
 
 export default NotFound;

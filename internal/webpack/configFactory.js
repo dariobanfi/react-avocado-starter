@@ -78,8 +78,8 @@ export default function webpackConfigFactory(buildOptions) {
             )}/__webpack_hmr`,
         ),
         // The source entry file for the bundle.
-        path.resolve(appRootDir.get(), bundleConfig.srcEntryFile),
-      ]),
+        path.resolve(appRootDir.get(), bundleConfig.srcEntryFile)
+      ])
     },
 
     // Bundle output configuration.
@@ -113,7 +113,7 @@ export default function webpackConfigFactory(buildOptions) {
         )}`,
         // Otherwise we expect our bundled client to be served from this path.
         bundleConfig.webPath,
-      ),
+      )
     },
 
     target: isClient
@@ -127,7 +127,7 @@ export default function webpackConfigFactory(buildOptions) {
     // ignored otherwise.
     node: {
       __dirname: true,
-      __filename: true,
+      __filename: true
     },
 
     // Source map settings.
@@ -163,7 +163,7 @@ export default function webpackConfigFactory(buildOptions) {
 
     resolve: {
       // These extensions are tried when resolving a file.
-      extensions: config('bundleSrcTypes').map(ext => `.${ext}`),
+      extensions: config('bundleSrcTypes').map(ext => `.${ext}`)
     },
 
     // We don't want our node_modules to be bundled with any bundle that is
@@ -182,14 +182,14 @@ export default function webpackConfigFactory(buildOptions) {
             whitelist: removeNil([
               // We always want the source-map-support included in
               // our node target bundles.
-              'source-map-support/register',
+              'source-map-support/register'
             ])
               // And any items that have been whitelisted in the config need
               // to be included in the bundling process too.
-              .concat(config('nodeExternalsFileTypeWhitelist') || []),
+              .concat(config('nodeExternalsFileTypeWhitelist') || [])
           },
         ),
-      ),
+      )
     ]),
 
     plugins: removeNil([
@@ -203,7 +203,7 @@ export default function webpackConfigFactory(buildOptions) {
           new webpack.BannerPlugin({
             banner: 'require("source-map-support").install();',
             raw: true,
-            entryOnly: false,
+            entryOnly: false
           }),
       ),
 
@@ -258,7 +258,7 @@ export default function webpackConfigFactory(buildOptions) {
         // Is this a node bundle?
         BUILD_FLAG_IS_NODE: JSON.stringify(isNode),
         // Is this a development build?
-        BUILD_FLAG_IS_DEV: JSON.stringify(isDev),
+        BUILD_FLAG_IS_DEV: JSON.stringify(isDev)
       }),
 
       // Generates a JSON file containing a map of all the output files for
@@ -270,7 +270,7 @@ export default function webpackConfigFactory(buildOptions) {
         () =>
           new AssetsPlugin({
             filename: config('bundleAssetsFileName'),
-            path: path.resolve(appRootDir.get(), bundleConfig.outputPath),
+            path: path.resolve(appRootDir.get(), bundleConfig.outputPath)
           }),
       ),
 
@@ -284,7 +284,7 @@ export default function webpackConfigFactory(buildOptions) {
       ifProdClient(
         () =>
           new webpack.LoaderOptionsPlugin({
-            minimize: true,
+            minimize: true
           }),
       ),
 
@@ -296,15 +296,15 @@ export default function webpackConfigFactory(buildOptions) {
             sourceMap: config('includeSourceMapsForOptimisedClientBundle'),
             compress: {
               screw_ie8: true,
-              warnings: false,
+              warnings: false
             },
             mangle: {
-              screw_ie8: true,
+              screw_ie8: true
             },
             output: {
               comments: false,
-              screw_ie8: true,
-            },
+              screw_ie8: true
+            }
           }),
       ),
 
@@ -314,7 +314,7 @@ export default function webpackConfigFactory(buildOptions) {
         () =>
           new ExtractTextPlugin({
             filename: '[name]-[contenthash].css',
-            allChunks: true,
+            allChunks: true
           }),
       ),
 
@@ -353,7 +353,7 @@ export default function webpackConfigFactory(buildOptions) {
                   // For a node bundle we use the specific target against
                   // babel-preset-env so that only the unsupported features of
                   // our target node version gets transpiled.
-                  ifNode(['env', { targets: { node: true } }]),
+                  ifNode(['env', { targets: { node: true } }])
                 ].filter(x => x != null),
 
                 plugins: [
@@ -375,13 +375,13 @@ export default function webpackConfigFactory(buildOptions) {
                   // and the resulting allocations. More importantly, it tells
                   // React that the subtree hasn’t changed so React can completely
                   // skip it when reconciling.
-                  ifProd('transform-react-constant-elements'),
-                ].filter(x => x != null),
+                  ifProd('transform-react-constant-elements')
+                ].filter(x => x != null)
               },
               buildOptions,
-            ),
-          },
-        ],
+            )
+          }
+        ]
       }),
 
       ifDevClient(() =>
@@ -392,11 +392,11 @@ export default function webpackConfigFactory(buildOptions) {
             {
               path: 'css-loader',
               // Include sourcemaps for dev experience++.
-              query: { sourceMap: true },
-            },
-          ],
+              query: { sourceMap: true }
+            }
+          ]
         }),
-      ),
+      )
 
       // END: HAPPY PACK PLUGINS
       // -----------------------------------------------------------------------
@@ -419,8 +419,8 @@ export default function webpackConfigFactory(buildOptions) {
               loader: 'happypack/loader?id=happypack-javascript',
               include: removeNil([
                 ...bundleConfig.srcPaths.map(srcPath => path.resolve(appRootDir.get(), srcPath)),
-                ifProdClient(path.resolve(appRootDir.get(), 'src/html')),
-              ]),
+                ifProdClient(path.resolve(appRootDir.get(), 'src/html'))
+              ])
             },
 
             // CSS
@@ -430,14 +430,14 @@ export default function webpackConfigFactory(buildOptions) {
             ifElse(isClient || isServer)(
               mergeDeep(
                 {
-                  test: /\.css$/,
+                  test: /\.css$/
                 },
                 // For development clients we will defer all our css processing to the
                 // happypack plugin named "happypack-devclient-css".
                 // See the respective plugin within the plugins section for full
                 // details on what loader is being implemented.
                 ifDevClient({
-                  loaders: ['happypack/loader?id=happypack-devclient-css'],
+                  loaders: ['happypack/loader?id=happypack-devclient-css']
                 }),
                 // For a production client build we use the ExtractTextPlugin which
                 // will extract our CSS into CSS files. We don't use happypack here
@@ -448,13 +448,13 @@ export default function webpackConfigFactory(buildOptions) {
                 ifProdClient(() => ({
                   loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader'],
-                  }),
+                    use: ['css-loader']
+                  })
                 })),
                 // When targetting the server we use the "/locals" version of the
                 // css loader, as we don't need any css files for the server.
                 ifNode({
-                  loaders: ['css-loader/locals'],
+                  loaders: ['css-loader/locals']
                 }),
               ),
             ),
@@ -482,16 +482,16 @@ export default function webpackConfigFactory(buildOptions) {
                 // We only emit files when building a web bundle, for the server
                 // bundle we only care about the file loader being able to create
                 // the correct asset URLs.
-                emitFile: isClient,
-              },
-            })),
+                emitFile: isClient
+              }
+            }))
 
             // Do not add any loader after file loader (fallback loader)
             // Make sure to add the new loader(s) before the "file" loader.
-          ]),
-        },
-      ],
-    },
+          ])
+        }
+      ]
+    }
   };
 
   if (isProd && isClient) {

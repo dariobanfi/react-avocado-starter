@@ -17,6 +17,9 @@
   "rules": {
     "react/jsx-filename-extension": 0,
     "react/sort-comp": 0,
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "comma-dangle": ["error", "never"],
+    "quotes": ["error", "single"],
+    "no-else-return": 0
   }
 }

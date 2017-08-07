@@ -47,7 +47,7 @@ function ServerHTML(props) {
     ...ifElse(helmet)(() => helmet.meta.toComponent(), []),
     ...ifElse(helmet)(() => helmet.link.toComponent(), []),
     ifElse(clientEntryAssets && clientEntryAssets.css)(() => stylesheetTag(clientEntryAssets.css)),
-    ...ifElse(helmet)(() => helmet.style.toComponent(), []),
+    ...ifElse(helmet)(() => helmet.style.toComponent(), [])
   ]);
 
   const bodyElements = removeNil([
@@ -73,7 +73,7 @@ function ServerHTML(props) {
       ),
     ),
     ifElse(clientEntryAssets && clientEntryAssets.js)(() => scriptTag(clientEntryAssets.js)),
-    ...ifElse(helmet)(() => helmet.script.toComponent(), []),
+    ...ifElse(helmet)(() => helmet.script.toComponent(), [])
   ]);
 
   return (
@@ -92,7 +92,7 @@ ServerHTML.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   helmet: PropTypes.object,
   nonce: PropTypes.string,
-  reactAppString: PropTypes.string,
+  reactAppString: PropTypes.string
 };
 
 // EXPORT

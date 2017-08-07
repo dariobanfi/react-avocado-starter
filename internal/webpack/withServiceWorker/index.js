@@ -35,13 +35,13 @@ export default function withServiceWorker(webpackConfig, bundleConfig) {
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true,
+        minifyURLs: true
       },
       inject: true,
       custom: {
         config,
-        ClientConfig,
-      },
+        ClientConfig
+      }
     }),
   );
 
@@ -95,7 +95,7 @@ export default function withServiceWorker(webpackConfig, bundleConfig) {
         // of injecting all of our client scripts into the body.
         // Please see the HtmlWebpackPlugin configuration above for more
         // information on this page.
-        navigateFallbackURL: `${bundleConfig.webPath}${config('serviceWorker.offlinePageFileName')}`,
+        navigateFallbackURL: `${bundleConfig.webPath}${config('serviceWorker.offlinePageFileName')}`
       },
       // According to the Mozilla docs, AppCache is considered deprecated.
       // @see https://mzl.la/1pOZ5wF
@@ -133,7 +133,7 @@ export default function withServiceWorker(webpackConfig, bundleConfig) {
             );
             return publicFileWebPaths;
           }, []),
-        ),
+        )
     }),
   );
 

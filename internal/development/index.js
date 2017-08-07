@@ -9,7 +9,7 @@ let devServer = new HotDevelopment();
 // Any changes to our webpack bundleConfigs should restart the development devServer.
 const watcher = chokidar.watch([
   pathResolve(appRootDir.get(), 'internal'),
-  pathResolve(appRootDir.get(), 'config'),
+  pathResolve(appRootDir.get(), 'config')
 ]);
 
 watcher.on('ready', () => {
@@ -17,7 +17,7 @@ watcher.on('ready', () => {
     log({
       title: 'webpack',
       level: 'warn',
-      message: 'Project build configuration has changed. Restarting the development devServer...',
+      message: 'Project build configuration has changed. Restarting the development devServer...'
     });
     devServer.dispose().then(() => {
       // Make sure our new webpack bundleConfigs aren't in the module cache.

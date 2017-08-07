@@ -11,10 +11,10 @@ const values = {
   // with our client bundle.
   clientConfigFilter: {
     serviceWorker: {
-      enabled: true,
+      enabled: true
     },
     polyfillIO: true,
-    htmlPage: true,
+    htmlPage: true
   },
 
   host: EnvVars.string('HOST', '0.0.0.0'),
@@ -27,13 +27,13 @@ const values = {
     enabled: true,
     url: '//cdn.polyfill.io/v2/polyfill.min.js',
 
-    features: ['default', 'es6'],
+    features: ['default', 'es6']
   },
 
   htmlPage: {
     titleTemplate: '🥑 - %s',
     defaultTitle: 'React Avocado Starter',
-    description: 'A simple yet powerful starter kit',
+    description: 'A simple yet powerful starter kit'
   },
 
   cspExtensions: {
@@ -46,7 +46,7 @@ const values = {
     manifestSrc: [],
     objectSrc: [],
     scriptSrc: ['cdn.polyfill.io'],
-    styleSrc: ['fonts.googleapis.com/css'],
+    styleSrc: ['fonts.googleapis.com/css']
   },
   publicAssetsPath: './static',
   buildOutputPath: './build',
@@ -63,13 +63,13 @@ const values = {
     /\.(eot|woff|woff2|ttf|otf)$/,
     /\.(svg|png|jpg|jpeg|gif|ico)$/,
     /\.(mp4|mp3|ogg|swf|webp)$/,
-    /\.(css|scss|sass|sss|less)$/,
+    /\.(css|scss|sass|sss|less)$/
   ],
   serviceWorker: {
     enabled: true,
     fileName: 'sw.js',
     includePublicAssets: ['./**/*'],
-    offlinePageFileName: 'offline.html',
+    offlinePageFileName: 'offline.html'
   },
 
   bundles: {
@@ -88,18 +88,18 @@ const values = {
           'react-router-dom',
           'redux',
           'react-redux',
-          'redux-thunk',
+          'redux-thunk'
         ],
 
-        name: '__dev_vendor_dll__',
-      },
+        name: '__dev_vendor_dll__'
+      }
     },
 
     server: {
       srcEntryFile: './server/index.js',
       srcPaths: ['./server', './app', './config'],
-      outputPath: './build/server',
-    },
+      outputPath: './build/server'
+    }
   },
 
   additionalNodeBundles: {
@@ -175,15 +175,15 @@ const values = {
       */
 
       return webpackConfig;
-    },
-  },
+    }
+  }
 };
 
 // This protects us from accidentally including this configuration in our
 // client bundle.
 if (process.env.BUILD_FLAG_IS_CLIENT === 'true') {
   throw new Error(
-    "You shouldn't be importing the `<projectroot>/config/values.js` directly into code that will be included in your 'client' bundle as the configuration object will be sent to user's browsers. This could be a security risk! Instead, use the `config` helper function located at `<projectroot>/config/index.js`.",
+    'You shouldn\'t be importing the `<projectroot>/config/values.js` directly into code that will be included in your \'client\' bundle as the configuration object will be sent to user\'s browsers. This could be a security risk! Instead, use the `config` helper function located at `<projectroot>/config/index.js`.',
   );
 }
 

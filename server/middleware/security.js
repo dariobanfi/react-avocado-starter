@@ -5,19 +5,19 @@ import config from '../../config';
 
 const cspConfig = {
   directives: {
-    childSrc: ["'self'"],
+    childSrc: ['\'self\''],
     connectSrc: ['*'],
-    defaultSrc: ["'self'"],
+    defaultSrc: ['\'self\''],
     imgSrc: [
-      "'self'",
+      '\'self\''
     ],
-    fontSrc: ["'self'", 'data:'],
-    objectSrc: ["'self'"],
-    mediaSrc: ["'self'"],
-    manifestSrc: ["'self'"],
+    fontSrc: ['\'self\'', 'data:'],
+    objectSrc: ['\'self\''],
+    mediaSrc: ['\'self\''],
+    manifestSrc: ['\'self\''],
     scriptSrc: [
       // Allow scripts hosted from our application.
-      "'self'",
+      '\'self\'',
       // Note: We will execution of any inline scripts that have the following
       // nonce identifier attached to them.
       // This is useful for guarding your application whilst allowing an inline
@@ -28,15 +28,15 @@ const cspConfig = {
       // It will be ignored by browsers that do support nonces as they will
       // recognise that we have also provided a nonce configuration and
       // use the stricter rule.
-      "'unsafe-inline'",
+      '\'unsafe-inline\''
     ],
     styleSrc: [
-      "'self'",
+      '\'self\'',
       // Webpack generates JS that loads our CSS, so this is needed:
-      "'unsafe-inline'",
-      'blob:',
-    ],
-  },
+      '\'unsafe-inline\'',
+      'blob:'
+    ]
+  }
 };
 
 // Add any additional CSP from the static config.
@@ -113,7 +113,7 @@ const securityMiddleware = [
   // The CSP configuration is an optional item for helmet, however you should
   // not remove it without making a serious consideration that you do not
   // require the added security.
-  helmet.contentSecurityPolicy(cspConfig),
+  helmet.contentSecurityPolicy(cspConfig)
 ];
 
 export default securityMiddleware;
