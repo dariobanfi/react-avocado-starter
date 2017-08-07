@@ -7,9 +7,9 @@ import webpack from 'webpack';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
 import { happyPackPlugin } from '../utils';
-import { ifElse } from '../../app/utils/logic';
-import { mergeDeep } from '../../app/utils/objects';
-import { removeNil } from '../../app/utils/arrays';
+import ifElse from '../../app/utils/logic/ifElse';
+import mergeDeep from '../../app/utils/objects/mergeDeep';
+import removeNil from '../../app/utils/arrays/removeNil';
 import withServiceWorker from './withServiceWorker';
 import config from '../../config';
 

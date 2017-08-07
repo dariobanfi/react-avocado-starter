@@ -1,4 +1,5 @@
 .env
+test-output/
 build/
 logs
 *.log
