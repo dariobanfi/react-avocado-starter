@@ -38,3 +38,9 @@ cd react-avocado-starter
 npm i
 npm run develop
 ```
+
+## Personal TODO
+
+- 100% Coverage
+- Remove warnings and noise
+- Autorefresh on rebuild
