@@ -1,8 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import config from '../../../config';
-
 const Home = () =>
   (<div>
     <Helmet>

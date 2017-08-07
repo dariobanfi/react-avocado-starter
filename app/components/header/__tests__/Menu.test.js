@@ -3,7 +3,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Menu from '../index';
+import Menu from '../Menu';
 
 describe('<Home />', () => {
   test('renders', () => {

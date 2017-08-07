@@ -15,8 +15,8 @@ This project is derived from react-universally.
   - 🌍 Server Side Rendering.
   - 🚄 `express` server.
   - 🎭 `jest` as the test framework.
-  - 💄 Combines `prettier` and Airbnb's ESlint configuration - performing code formatting on commit. Stop worrying about code style consistency.
   - 💅 Styled Components for CSS.
+  - 💄 Airbnb's ESlint configuration + Stylelint for Styled Components.
   - 😎 Progressive Web Application ready, with offline support, via a Service Worker.
   - 🐘 Long term browser caching of assets with automated cache invalidation.
   - 📦 All source is bundled using Webpack v2.

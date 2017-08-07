@@ -81,7 +81,15 @@ const values = {
       webPath: '/client/',
       devVendorDLL: {
         enabled: true,
-        include: ['react', 'react-dom', 'react-helmet', 'react-router-dom'],
+        include: [
+          'react',
+          'react-dom',
+          'react-helmet',
+          'react-router-dom',
+          'redux',
+          'react-redux',
+          'redux-thunk',
+        ],
 
         name: '__dev_vendor_dll__',
       },
