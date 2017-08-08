@@ -1,6 +1,6 @@
 # React Avocado Starter
 
-[![Build Status](https://travis-ci.org/dariobanfi/react-avocado-starter.svg?branch=master)](https://travis-ci.org/dariobanfi/react-avocado-starter.svg?branch=master)
+[![Build Status](https://travis-ci.org/dariobanfi/react-avocado-starter.svg?branch=master)](https://travis-ci.org/dariobanfi/react-avocado-starter/)
 [![Greenkeeper badge](https://badges.greenkeeper.io/dariobanfi/react-avocado-starter.svg)](https://greenkeeper.io/)
 
 Simple yet full of energy, like an Avocado! 🥑
