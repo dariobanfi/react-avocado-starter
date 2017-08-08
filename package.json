@@ -8,7 +8,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "npm run lint:js:fix",
+      "eslint --fix",
       "git add"
     ]
   },
