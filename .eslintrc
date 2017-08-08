@@ -20,6 +20,8 @@
     "linebreak-style": 0,
     "comma-dangle": ["error", "never"],
     "quotes": ["error", "single"],
-    "no-else-return": 0
+    "no-else-return": 0,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
   }
 }
