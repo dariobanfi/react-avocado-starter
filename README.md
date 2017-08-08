@@ -1,5 +1,7 @@
 # React Avocado Starter
 
+[![Build Status](https://travis-ci.org/dariobanfi/react-avocado-starter.svg?branch=master)](https://travis-ci.org/dariobanfi/react-avocado-starter.svg?branch=master)
+
 Simple yet full of energy, like an Avocado! 🥑
 
 ## About
