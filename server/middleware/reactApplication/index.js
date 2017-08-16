@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { ServerStyleSheet } from 'styled-components';
 
 import config from '../../../config';
 
@@ -49,6 +50,7 @@ export default function reactApplicationMiddleware(request, response) {
     <ServerHTML
       reactAppString={appString}
       nonce={nonce}
+      sheet={new ServerStyleSheet()}
       helmet={Helmet.rewind()}
     />,
   );
