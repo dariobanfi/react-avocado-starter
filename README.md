@@ -56,4 +56,4 @@ To fix this, create a file called `.env.development.local` under the project roo
 - Add redux
 - Make application a bit nicer
 - Update npm deps
-- Add circleCI, greenkeeper, badges, codecov, etc.
+- codecov
