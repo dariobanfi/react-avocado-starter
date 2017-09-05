@@ -52,7 +52,6 @@ To fix this, create a file called `.env.development.local` under the project roo
 
 - 100% Coverage
 - Remove warnings and noise
-- Autorefresh on rebuild
 - Add redux
 - Make application a bit nicer
 - Update npm deps
