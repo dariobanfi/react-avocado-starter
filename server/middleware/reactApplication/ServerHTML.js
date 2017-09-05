@@ -39,7 +39,8 @@ function scriptTag(jsFilePath) {
 // COMPONENT
 
 function ServerHTML(props) {
-  const { helmet, nonce, reactAppString } = props;
+  const { helmet, nonce, reactAppString, sheet } = props;
+  const css = sheet.getStyleElement();
 
   const headerElements = removeNil([
     ...ifElse(helmet)(() => helmet.title.toComponent(), []),
@@ -47,7 +48,8 @@ function ServerHTML(props) {
     ...ifElse(helmet)(() => helmet.meta.toComponent(), []),
     ...ifElse(helmet)(() => helmet.link.toComponent(), []),
     ifElse(clientEntryAssets && clientEntryAssets.css)(() => stylesheetTag(clientEntryAssets.css)),
-    ...ifElse(helmet)(() => helmet.style.toComponent(), [])
+    ...ifElse(helmet)(() => helmet.style.toComponent(), []),
+    ...ifElse(css.length > 0)(() => css, [])
   ]);
 
   const bodyElements = removeNil([
@@ -92,7 +94,9 @@ ServerHTML.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   helmet: PropTypes.object,
   nonce: PropTypes.string,
-  reactAppString: PropTypes.string
+  reactAppString: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  sheet: PropTypes.object
 };
 
 // EXPORT
