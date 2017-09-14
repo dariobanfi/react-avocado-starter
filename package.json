@@ -126,7 +126,7 @@
     "semver": "5.4.1",
     "source-map-support": "0.4.16",
     "style-loader": "0.18.2",
-    "stylelint": "8.0.0",
+    "stylelint": "8.1.0",
     "stylelint-config-standard": "17.0.0",
     "stylelint-processor-styled-components": "0.3.0",
     "webpack": "3.5.1",
