@@ -75,7 +75,7 @@
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-helmet": "5.1.3",
-    "react-router-dom": "4.1.2",
+    "react-router-dom": "4.2.0",
     "serialize-javascript": "1.4.0",
     "styled-components": "2.1.2",
     "user-home": "2.0.0",
