@@ -109,7 +109,7 @@
     "eslint-plugin-jsx-a11y": "6.0.2",
     "eslint-plugin-react": "7.2.0",
     "extract-text-webpack-plugin": "3.0.0",
-    "file-loader": "0.11.2",
+    "file-loader": "1.1.3",
     "glob": "7.1.2",
     "happypack": "4.0.0-beta.3",
     "html-webpack-plugin": "2.30.1",
